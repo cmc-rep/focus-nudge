@@ -1,0 +1,158 @@
+export const DEFAULT_SETTINGS = {
+  thresholdMinutes: 3,
+  dismissMinutes: 1,
+  showNotification: true,
+  showOverlay: true,
+  heuristicsEnabled: true,
+  heuristicCutoff: 3,
+  escalate: true,
+  debugMode: false,
+  debugThresholdSeconds: 15,
+  blocklist: [],
+  allowlist: []
+};
+
+/** Hosts permanently treated as distractions. The user cannot allowlist these. */
+export const LOCKED_DOMAINS = [
+  'reddit.com',
+  'x.com',
+  'twitter.com',
+  'facebook.com',
+  'instagram.com',
+  'youtube.com',
+  'youtu.be',
+  'tiktok.com',
+  'netflix.com',
+  'hulu.com',
+  'twitch.tv',
+  'quora.com'
+];
+
+/** Hosts always treated as distractions unless the user allowlists them. */
+export const BUILT_IN_DOMAINS = [
+  // Video / streaming feeds
+  'youtube.com',
+  'youtu.be',
+  'twitch.tv',
+  'tiktok.com',
+  'netflix.com',
+  'hulu.com',
+  'dailymotion.com',
+  'vimeo.com',
+  'bilibili.com',
+
+  // Social networks / forums
+  'reddit.com',
+  'x.com',
+  'twitter.com',
+  'facebook.com',
+  'instagram.com',
+  'threads.net',
+  'snapchat.com',
+  'pinterest.com',
+  'tumblr.com',
+  'linkedin.com',
+  'quora.com',
+  '9gag.com',
+  'imgur.com',
+  'weibo.com',
+  'douyin.com',
+  'xiaohongshu.com',
+  'zhihu.com',
+  'discord.com',
+  'mastodon.social',
+  'bsky.app',
+
+  // News
+  'news.google.com',
+  'news.yahoo.com',
+  'cnn.com',
+  'bbc.com',
+  'bbc.co.uk',
+  'nytimes.com',
+  'washingtonpost.com',
+  'theguardian.com',
+  'foxnews.com',
+  'nbcnews.com',
+  'cbsnews.com',
+  'abcnews.go.com',
+  'msn.com',
+  'reuters.com',
+  'apnews.com',
+  'bloomberg.com',
+  'wsj.com',
+  'usatoday.com',
+  'huffpost.com',
+  'buzzfeed.com',
+  'dailymail.co.uk',
+  'nypost.com',
+  'newsweek.com',
+  'thehill.com',
+  'politico.com',
+  'cnbc.com',
+  'scmp.com',
+  'aljazeera.com',
+  'drudgereport.com',
+
+  // Sports
+  'espn.com',
+  'bleacherreport.com',
+  'nba.com',
+  'nfl.com',
+  'mlb.com',
+  'nhl.com',
+  'fifa.com',
+  'skysports.com',
+  'goal.com',
+  'cbssports.com',
+  'si.com',
+  'theathletic.com',
+  'sports.yahoo.com'
+];
+
+/** Hostname fragments that hint at news/sports content on unknown domains. */
+export const NEWSY_HOST_FRAGMENTS = [
+  'news',
+  'sport',
+  'tribune',
+  'herald',
+  'gazette',
+  'chronicle',
+  'daily',
+  'times',
+  'post',
+  'journal',
+  'magazine',
+  'observer',
+  'telegraph'
+];
+
+/** Hostname fragments that strongly suggest work/reference material. */
+export const PRODUCTIVE_HOST_FRAGMENTS = [
+  'docs.',
+  'doc.',
+  'developer.',
+  'dev.',
+  'api.',
+  'localhost',
+  'github.com',
+  'gitlab.com',
+  'bitbucket.org',
+  'stackoverflow.com',
+  'stackexchange.com',
+  'npmjs.com',
+  'pypi.org',
+  'mozilla.org',
+  'microsoft.com',
+  'atlassian.net',
+  'notion.so',
+  'figma.com',
+  'office.com',
+  'sharepoint.com',
+  'google.com/search',
+  'mail.google.com',
+  'calendar.google.com',
+  'drive.google.com',
+  'arxiv.org',
+  'wikipedia.org'
+];

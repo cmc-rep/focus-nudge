@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Focus Nudge — Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <h1>
+        Focus Nudge
+        <!-- Invisible hotspot: the only way back into debug mode. -->
+        <label class="hotspot"><input id="debugMode" type="checkbox" aria-label="Debug mode" tabindex="-1" /></label>
+      </h1>
+      <p class="lede">
+        Counts the time you actively spend on news, video, and social feeds and nudges you when
+        you overstay. Everything stays on this device — no page content ever leaves the browser.
+      </p>
+
+      <section>
+        <h2>Your sites</h2>
+        <label class="block">
+          <span>Always a distraction</span>
+          <textarea id="blocklist" rows="5" spellcheck="false" placeholder="one domain per line"></textarea>
+        </label>
+        <label class="block">
+          <span>Never a distraction</span>
+          <textarea id="allowlist" rows="5" spellcheck="false" placeholder="one domain per line"></textarea>
+        </label>
+        <p class="note">
+          Some sites are always a distraction and cannot be exempted, such as Reddit and YouTube.
+        </p>
+      </section>
+
+      <section data-debug-only>
+        <h2>Timing</h2>
+        <label>
+          <span>Remind me after</span>
+          <input id="thresholdMinutes" type="number" min="1" max="180" step="1" />
+          <em>minutes of focused time on the distraction set</em>
+        </label>
+        <label>
+          <span>Dismiss length</span>
+          <input id="dismissMinutes" type="number" min="1" max="60" step="1" />
+          <em>minutes before the nudge can return</em>
+        </label>
+      </section>
+
+      <section data-debug-only>
+        <h2>Reminders</h2>
+        <label class="check">
+          <input id="showNotification" type="checkbox" />
+          <span>System notification</span>
+        </label>
+        <label class="check">
+          <input id="showOverlay" type="checkbox" />
+          <span>In-page banner</span>
+        </label>
+        <label class="check">
+          <input id="escalate" type="checkbox" />
+          <span>Escalate after the third nudge (sticky notification, delayed dismiss button)</span>
+        </label>
+      </section>
+
+      <section data-debug-only>
+        <h2>Detection</h2>
+        <label class="check">
+          <input id="heuristicsEnabled" type="checkbox" />
+          <span>Also detect unknown news, video, and feed pages from page content</span>
+        </label>
+        <label>
+          <span>Sensitivity cutoff</span>
+          <input id="heuristicCutoff" type="number" min="1" max="12" step="1" />
+          <em>lower catches more sites, higher means fewer false alarms</em>
+        </label>
+      </section>
+
+      <section data-debug-only>
+        <h2>Testing</h2>
+        <label>
+          <span>Debug threshold</span>
+          <input id="debugThresholdSeconds" type="number" min="5" max="600" step="5" />
+          <em>seconds</em>
+        </label>
+      </section>
+
+      <div class="actions">
+        <button id="save" type="button">Save</button>
+        <button id="restore" class="ghost" type="button">Restore defaults</button>
+        <span id="status" class="status" role="status"></span>
+      </div>
+    </main>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

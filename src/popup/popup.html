@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Focus Nudge</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Focus Nudge</h1>
+      <button id="settings" class="link" type="button">Settings</button>
+    </header>
+
+    <section class="status">
+      <div id="verdict" class="verdict">Checking…</div>
+      <div id="host" class="host"></div>
+      <div id="reason" class="reason"></div>
+    </section>
+
+    <section class="meter">
+      <div class="bar"><div id="fill" class="fill"></div></div>
+      <div class="meter-labels">
+        <span id="elapsed">0m 00s</span>
+        <span id="threshold"></span>
+      </div>
+      <div id="nudges" class="reason"></div>
+    </section>
+
+    <section class="rules">
+      <button id="block" type="button">Always remind here</button>
+      <button id="allow" type="button">Never remind here</button>
+      <button id="clear" type="button">Use default</button>
+    </section>
+
+    <section class="rules">
+      <button id="reset" type="button">Reset timer</button>
+    </section>
+
+    <footer>
+      <span>Today on distractions</span>
+      <strong id="today">0m 00s</strong>
+    </footer>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

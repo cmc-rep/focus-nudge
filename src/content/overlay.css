@@ -1,0 +1,110 @@
+:host {
+  all: initial;
+}
+
+.card {
+  position: fixed;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-24px);
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  box-sizing: border-box;
+  max-width: min(1120px, calc(100vw - 64px));
+  padding: 28px 32px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #1d1f24;
+  color: #f4f5f7;
+  font: 28px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.38);
+  opacity: 0;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.card.insistent {
+  border-color: #ff8a65;
+  background: #2a1d1a;
+}
+
+.badge {
+  flex: 0 0 auto;
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #3b82f6;
+  font-size: 36px;
+}
+
+.card.insistent .badge {
+  background: #f97316;
+}
+
+.body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.sub {
+  font-size: 24px;
+  color: #a9b0bd;
+  font-variant-numeric: tabular-nums;
+}
+
+.actions {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 16px;
+}
+
+button {
+  font: inherit;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #fff;
+}
+
+button.primary:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}
